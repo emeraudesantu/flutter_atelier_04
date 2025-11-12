@@ -26,8 +26,31 @@ class _MyWidgetState extends State<MyWidget> {
                 setState(() {
                   compteur ++;
                 });
-              }, child: Text('Incrementer'))
+              }, child: Text('Incrementer')),
+           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(onPressed: (){
+                setState(() {
+                  compteur --;
+                });
+              }, child: Text("--")),
+              SizedBox(width: 10),
+              ElevatedButton(onPressed: () {
+                setState(() {
+                  compteur = 0;
+                });
+              }, child: Text('Reinitialiser')),
+              SizedBox(width: 10),
+              ElevatedButton(onPressed: (){
+                setState(() {
+                  compteur ++;
+                });
+              }, child: Text("+")),
             ],
+           ),
+           ],
+          
           ),
         ),
       ),

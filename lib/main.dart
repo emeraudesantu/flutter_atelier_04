@@ -12,6 +12,7 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
   int compteur =0 ;
+  double degre = 0 ;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -65,6 +66,14 @@ class _MyWidgetState extends State<MyWidget> {
             }, icon: Icon(Icons.add)),
             ],
            ),
+           Text("Merci de choisir le degre de rotation"),
+           Slider(value: degre, min : 0, max : 360, onChanged: (value) {
+            setState(() {
+              degre = value ;
+            });
+           },
+           ), 
+           Text("le degre choisi est ${degre.toStringAsFixed(0)}"),
            ],
           
           ),
